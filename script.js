@@ -25,9 +25,6 @@ function myFunction () {
         li.classList.add('list-group-item');
         ul.appendChild(li);
 
-
-       price[i] = myCoursesArray[i].slice(-10,-7);
-       //price[i] = price[i].slice(1,4);
        
     }
     

@@ -1,6 +1,5 @@
 function myFunction () {
     const button = document.querySelector('button');
-    let price = [];
 
     //change the title
     let title = document.querySelector('.title');
@@ -24,16 +23,16 @@ function myFunction () {
         li.innerHTML = myCoursesArray[i];
         li.classList.add('list-group-item');
         ul.appendChild(li);
-
-       
     }
     
+    //Button click event listener
     button.addEventListener('click', e => {
-        //console.log('You click the sort button');
+        //Sort the array and set it to a new array
         let myNewPriceArray = myCoursesArray.sort((course1, course2) => (course1.slice(-10,-7) < course2.slice(-10,-7) ? 1 : (course1.slice(-10,-7) > course2.slice(-10,-7) ? -1 : 0)));
+        //put all li on page into an array
         let myLi = document.querySelectorAll('li');
         
-       
+       //populate the new li array with new sorted array of items
         for(let x = 0; x < myLi.length; x++) {
             myLi[x].innerHTML = myNewPriceArray[x];
         }
